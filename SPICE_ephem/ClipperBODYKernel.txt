@@ -1,0 +1,7 @@
+
+  \begindata
+
+           NAIF_BODY_NAME += ( 'Clipper' )
+           NAIF_BODY_CODE += ( -650 )
+
+  \begintext
