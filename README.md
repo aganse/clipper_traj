@@ -22,36 +22,36 @@ binary data files (one for each of the 45 flybys), which are then easily loaded
 into Matlab or Octave.  The included Matlab/Octave scripts read and plot that
 extracted data as a verification and demonstration for use in further coding.
 
-The Fortran source uses the NASA NAIF spice toolkit, available at:  
-> http://naif.jpl.nasa.gov/naif/toolkit.html  (last access 1 Dec 2014),
+The Fortran source uses the NASA NAIF spice toolkit, available at:
+http://naif.jpl.nasa.gov/naif/toolkit.html  (last access 1 Dec 2014),
 implemented into my code with generous assistance from Chuck Acton, NASA NAIF.
 It also uses the publicly available proposed Europa Clipper trajectory data
-available at:  
-> https://solarsystem.nasa.gov/europa/iceedocs.cfm  (last access 1 Dec 2014)
+available at:
+https://solarsystem.nasa.gov/europa/iceedocs.cfm  (last access 1 Dec 2014).
 The files on that page are the contents of the SPICE_ephem subdirectory here;
 included here to show where they go and which files are needed.
 (FIXME: Further distribution of this package in future may require me to
-separate those files out from this package...)  
+separate those files out from this package...)
 The Matlab/Octave code here also relies on publicly available SimplePeakFind.m
 function, included here for convenience; its author's website is listed in
 that script.  (FIXME: same issue with SimplePeakFind.m as for SPICE files in
 future distributions of this package.)
 
 To compile the Fortran code:  
-1. Ensure you have GNU gfortran installed (latest test used gfortran ver 4.9.2)
+1. Ensure you have GNU gfortran installed (latest test used gfortran ver 4.9.2)  
 2. You must download/install the JPL SPICE Toolkit library:
- download from:  http://naif.jpl.nasa.gov/naif/toolkit_FORTRAN.html
- Took perhaps 5-10min to compile on my 2011 MacBook Pro.
+ (download from:  http://naif.jpl.nasa.gov/naif/toolkit_FORTRAN.html)
+ Took perhaps 5-10min to compile on my 2011 MacBook Pro.  
 3. Edit the Makefile for this ganse_clipper_traj package to change the path of
- the JPL Toolkit to wherever you installed it.
+ the JPL Toolkit to wherever you installed it.  
 4. While in the ganse_clipper_traj directory, enter "make".  This will compile
  clipper_trajorbs_calc.f but not clipper_trajall_calc.f (because I don't use
  that one much anymore since getting the times of closest approach out of it).
  For that one enter "make clipper_trajall_calc".
 
 Quick descriptions of files in this package:  
-  Makefile - make sure to personalize your path to JPL SPICE Toolkit in here
-  README.txt - this file
+  `Makefile` - make sure to personalize your path to JPL SPICE Toolkit in here
+  `README.txt` - this file
   SPICE_ephem/ - contains the Europa Clipper ephem and related SPICE files
   SimplePeakFind.m - used by clipper_trajorbs_read.m for finding times of
                               closest approach (times of altitude minima)
