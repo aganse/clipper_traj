@@ -1,15 +1,20 @@
-ganse_clipper_traj
-Andrew Ganse, APL-UW, aganse@apl.washington.edu
-http://staff.washington.edu/aganse
-3 Dec 2014
+![Jupiter](headerA.png) ![Europa](headerB.png)
+
+ganse_clipper_traj  
+Andrew Ganse, APL-UW, aganse@apl.washington.edu  
+http://staff.washington.edu/aganse  
+3 Dec 2014  
+
 --------------------------------------------------------------------------------
 Fortran/Matlab/Octave implementation to read publicly available SPICE files for
 proposed Europa Clipper trajectories.
+
 --------------------------------------------------------------------------------
-                                    last tested with:
-                                    gfortran 4.9.2, Matlab R2011b, Octave 3.8.0
-                                    JPL SPICE Toolkit version N0065
-                                    on OSX Yosemite 10.10.1
+
+                                    last tested with:  
+                                    gfortran 4.9.2, Matlab R2011b, Octave 3.8.0  
+                                    JPL SPICE Toolkit version N0065  
+                                    on OSX Yosemite 10.10.1  
 
 These codes extract Europa Clipper proposed spacecraft trajectories from public
 NASA SPICE database files and saves their Europan lat/long/altitude values into
@@ -33,13 +38,13 @@ that script.  (FIXME: same issue with SimplePeakFind.m as for SPICE files in
 future distributions of this package.)
 
 To compile the Fortran code:
-1.) Ensure you have GNU gfortran installed (latest test used gfortran ver 4.9.2)
-2.) You must download/install the JPL SPICE Toolkit library:
+1. Ensure you have GNU gfortran installed (latest test used gfortran ver 4.9.2)
+2. You must download/install the JPL SPICE Toolkit library:
  download from:  http://naif.jpl.nasa.gov/naif/toolkit_FORTRAN.html
  Took perhaps 5-10min to compile on my 2011 MacBook Pro.
-3.) Edit the Makefile for this ganse_clipper_traj package to change the path of
+3. Edit the Makefile for this ganse_clipper_traj package to change the path of
  the JPL Toolkit to wherever you installed it.
-4.) While in the ganse_clipper_traj directory, enter "make".  This will compile
+4. While in the ganse_clipper_traj directory, enter "make".  This will compile
  clipper_trajorbs_calc.f but not clipper_trajall_calc.f (because I don't use
  that one much anymore since getting the times of closest approach out of it).
  For that one enter "make clipper_trajall_calc".
