@@ -39,39 +39,39 @@ future distributions of this package.)
 
 To compile the Fortran code:  
 1. Ensure you have GNU gfortran installed (latest test used gfortran ver 4.9.2)  
-2. You must download/install the JPL SPICE Toolkit library:
- (download from:  http://naif.jpl.nasa.gov/naif/toolkit_FORTRAN.html)
- Took perhaps 5-10min to compile on my 2011 MacBook Pro.  
+2. You must download/install the JPL SPICE Toolkit library
+   (download from:  http://naif.jpl.nasa.gov/naif/toolkit_FORTRAN.html)
+   Took perhaps 5-10min to compile on my 2011 MacBook Pro.  
 3. Edit the Makefile for this ganse_clipper_traj package to change the path of
- the JPL Toolkit to wherever you installed it.  
+   the JPL Toolkit to wherever you installed it.  
 4. While in the ganse_clipper_traj directory, enter "make".  This will compile
- clipper_trajorbs_calc.f but not clipper_trajall_calc.f (because I don't use
- that one much anymore since getting the times of closest approach out of it).
- For that one enter "make clipper_trajall_calc".
+   clipper_trajorbs_calc.f but not clipper_trajall_calc.f (because I don't use
+   that one much anymore since getting the times of closest approach out of it).
+   For that one enter "make clipper_trajall_calc".
 
 Quick descriptions of files in this package:  
-  `Makefile` - make sure to personalize your path to JPL SPICE Toolkit in here
-  `README.txt` - this file
-  SPICE_ephem/ - contains the Europa Clipper ephem and related SPICE files
-  SimplePeakFind.m - used by clipper_trajorbs_read.m for finding times of
-                              closest approach (times of altitude minima)
-  clipper_traj_data/ - the directory to which clipper_trajall_calc and
-       clipper_trajorbs_calc write their data files (empty till they run)
-  clipper_trajall_calc.f - Fortran code that extracts COMPLETE (large!)
+  `Makefile` - make sure to personalize your path to JPL SPICE Toolkit in here  
+  `README.txt` - this file  
+  `SPICE_ephem/` - contains the Europa Clipper ephem and related SPICE files  
+  `SimplePeakFind.m` - used by clipper_trajorbs_read.m for finding times of
+                              closest approach (times of altitude minima)  
+  `clipper_traj_data/` - the directory to which clipper_trajall_calc and
+       clipper_trajorbs_calc write their data files (empty till they run)  
+  `clipper_trajall_calc.f` - Fortran code that extracts COMPLETE (large!)
         dataset of all points in several years of proposed Europa Clipper
      trajectories.  Myself I only used this data to find closest approach
-         points for use in clipper_trajorbs_calc.f and haven't used since.
-  clipper_trajall_plot.pdf - result from clipper_trajall_read.m showing 
-           the 45 closest approach times used in clipper_trajorbs_calc.f.
-  clipper_trajall_read.m - Matlab code that reads output of
-        clipper_trajall_calc.f that was written to clipper_traj_data dir.
-  clipper_trajorbs_calc.f - Fortran code that extracts +/-30min of
-    trajectory around the closest approach points of the 45 flyby orbits.
-  clipper_trajorbs_plot.pdf - result from clipper_trajorbs_read.m showing
+         points for use in clipper_trajorbs_calc.f and haven't used since.  
+  `clipper_trajall_plot.pdf` - result from clipper_trajall_read.m showing 
+           the 45 closest approach times used in clipper_trajorbs_calc.f.  
+  `clipper_trajall_read.m` - Matlab code that reads output of
+        clipper_trajall_calc.f that was written to clipper_traj_data dir.  
+  `clipper_trajorbs_calc.f` - Fortran code that extracts +/-30min of
+    trajectory around the closest approach points of the 45 flyby orbits.  
+  `clipper_trajorbs_plot.pdf` - result from clipper_trajorbs_read.m showing
         the lat/lon projections of those closest-approach segments of the
-                 flybys, with the closest approach points marked as well.
-  clipper_trajorbs_read.m - Matlab code that reads output of
-       clipper_trajorbs_calc.f that was written to clipper_traj_data dir.
+                 flybys, with the closest approach points marked as well.  
+  `clipper_trajorbs_read.m` - Matlab code that reads output of
+       clipper_trajorbs_calc.f that was written to clipper_traj_data dir.  
 
 Note the source files clipper_trajorbs_calc.f and clipper_trajall_calc.f are
 almost identical, with just a few differences to extract the full trajectory
